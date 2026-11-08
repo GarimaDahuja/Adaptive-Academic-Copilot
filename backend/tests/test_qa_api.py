@@ -171,3 +171,4 @@ class TestQAAPI:
         # Verify chunk in DB now has an embedding
         updated_chunk = db_session.get(DocumentChunk, chunk.id)
         assert updated_chunk.embedding is not None
+

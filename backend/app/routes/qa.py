@@ -138,3 +138,4 @@ def embed_document(doc_id: int):
         "total_chunks": len(chunks),
         "chunks_embedded": embedded_count,
     }), 200
+
