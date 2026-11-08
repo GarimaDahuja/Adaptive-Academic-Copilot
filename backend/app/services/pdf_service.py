@@ -111,3 +111,4 @@ def extract_text_and_chunks(
         current_chunk_idx += len(page_chunks)
 
     return all_chunks
+
