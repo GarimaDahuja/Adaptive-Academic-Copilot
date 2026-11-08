@@ -22,10 +22,12 @@ class Config:
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16 MB max file upload
     ALLOWED_EXTENSIONS = {"pdf"}
 
-    # Database configuration (PostgreSQL + pgvector)
+    # Database configuration.
+    # Defaults to a local SQLite file so the server starts without Docker.
+    # Set DATABASE_URL in .env to a PostgreSQL URL for full pgvector support.
     DATABASE_URL = os.getenv(
         "DATABASE_URL",
-        "postgresql://postgres:postgres@localhost:5432/academic_copilot",
+        f"sqlite:///{BASE_DIR / 'academic_copilot.db'}",
     )
     SQLALCHEMY_DATABASE_URI = DATABASE_URL
     SQLALCHEMY_TRACK_MODIFICATIONS = False
