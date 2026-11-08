@@ -141,3 +141,4 @@ def get_student_analytics(
         "topics_due_for_revision": topics_due,
         "topic_masteries": [r.to_dict() for r in profile],
     }
+

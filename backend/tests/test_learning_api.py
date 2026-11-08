@@ -166,3 +166,4 @@ class TestAnalyticsAndRLRecommendationAPI:
         assert "suggested_quizzes" in data
         assert "current_full_mastery_profile" in data
         assert len(data["current_full_mastery_profile"]) == 5
+

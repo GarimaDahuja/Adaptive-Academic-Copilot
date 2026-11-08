@@ -197,3 +197,4 @@ def get_adaptive_recommendation(student_id: str):
     rec["current_full_mastery_profile"] = mastery_vector
 
     return jsonify(rec), 200
+
