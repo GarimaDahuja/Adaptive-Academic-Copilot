@@ -17,6 +17,11 @@ class Config:
     DEBUG = os.getenv("FLASK_DEBUG", "True").lower() in ("true", "1", "t")
     PORT = int(os.getenv("PORT", 5000))
 
+    # File uploads configuration
+    UPLOAD_FOLDER = BASE_DIR / "uploads"
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16 MB max file upload
+    ALLOWED_EXTENSIONS = {"pdf"}
+
     # Database configuration (PostgreSQL + pgvector)
     DATABASE_URL = os.getenv(
         "DATABASE_URL",
@@ -36,3 +41,4 @@ class TestConfig(Config):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    UPLOAD_FOLDER = BASE_DIR / "tests" / "temp_uploads"

@@ -204,3 +204,4 @@ class Comment(db.Model):
             "comment_text": self.comment_text,
             "created_at": self.created_at.isoformat() if self.created_at else None,
         }
+

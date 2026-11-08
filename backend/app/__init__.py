@@ -16,7 +16,10 @@ def create_app(config_class=Config):
 
     # Register blueprints
     from backend.app.routes.health import health_bp
+    from backend.app.routes.documents import documents_bp
+
     app.register_blueprint(health_bp)
+    app.register_blueprint(documents_bp)
 
     # Error handlers returning structured JSON responses
     @app.errorhandler(404)

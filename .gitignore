@@ -26,6 +26,7 @@ instance/
 
 # Uploaded documents / temp files
 uploads/
+tests/temp_uploads/
 *.log
 
 # Node & Frontend (for upcoming React frontend)

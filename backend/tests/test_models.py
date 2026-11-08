@@ -155,3 +155,4 @@ def test_document_comments(db_session):
     comment_data = comment.to_dict()
     assert comment_data["user_id"] == "student_456"
     assert "Question 3" in comment_data["comment_text"]
+
