@@ -37,3 +37,4 @@ class LinearCurriculumPolicy(BasePolicy):
 
     def reset(self, seed: Optional[int] = None) -> None:
         self.current_topic = 0
+

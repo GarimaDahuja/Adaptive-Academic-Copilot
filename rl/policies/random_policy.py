@@ -23,3 +23,4 @@ class RandomPolicy(BasePolicy):
     def reset(self, seed: Optional[int] = None) -> None:
         if seed is not None:
             self.rng = np.random.default_rng(seed)
+
