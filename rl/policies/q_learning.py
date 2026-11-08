@@ -118,3 +118,4 @@ class QLearningPolicy(BasePolicy):
         if seed is not None:
             self.rng = np.random.default_rng(seed)
         self.epsilon = self.initial_epsilon
+

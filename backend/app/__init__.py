@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from backend.app.config import Config
+from backend.app.database import db
 
 
 def create_app(config_class=Config):
@@ -9,6 +10,9 @@ def create_app(config_class=Config):
     """
     app = Flask(__name__)
     app.config.from_object(config_class)
+
+    # Initialize extensions
+    db.init_app(app)
 
     # Register blueprints
     from backend.app.routes.health import health_bp
@@ -30,4 +34,3 @@ def create_app(config_class=Config):
         }), 500
 
     return app
-

@@ -4,11 +4,14 @@ Flask>=3.1.0
 # Environment Variable Management
 python-dotenv>=1.0.1
 
+# Database & ORM
+Flask-SQLAlchemy>=3.1.1
+psycopg2-binary>=2.9.9
+pgvector>=0.3.6
+
 # Testing
 pytest>=8.3.4
 
 # Reinforcement Learning & Numerical Computing
 gymnasium>=1.0.0
 numpy>=2.0.0
-
-

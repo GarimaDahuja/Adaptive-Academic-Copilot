@@ -160,3 +160,4 @@ class AdaptiveRecommendationService:
             raise ValueError(f"Unknown policy type: {policy_type}")
 
         return cls(policy=policy)
+
