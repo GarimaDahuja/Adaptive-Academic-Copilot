@@ -1,0 +1,45 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables & secrets (NEVER commit secrets!)
+.env
+.env.local
+.env.*.local
+
+# Flask instance folder
+instance/
+
+# Uploaded documents / temp files
+uploads/
+*.log
+
+# Node & Frontend (for upcoming React frontend)
+node_modules/
+build/
+dist/
+.npm
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+# Core Web Framework
+Flask>=3.1.0
+
+# Environment Variable Management
+python-dotenv>=1.0.1
+
+# Testing
+pytest>=8.3.4
