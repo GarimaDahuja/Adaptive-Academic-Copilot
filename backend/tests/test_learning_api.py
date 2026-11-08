@@ -75,6 +75,37 @@ class TestQuizManagementAPI:
         )
         assert target_admin["correct_option"] == 1
 
+    def test_get_single_quiz_by_id(self, client, db_session):
+        q = QuizQuestion(
+            subject="Computer Networks",
+            topic_index=3,
+            topic_name="Network Layer & Routing",
+            question_text="Which protocol is used for finding IP to MAC address mapping?",
+            options=["DNS", "ARP", "DHCP", "ICMP"],
+            correct_option=1,
+            explanation="ARP resolves IP addresses to physical MAC addresses.",
+            difficulty="easy",
+        )
+        db_session.add(q)
+        db_session.commit()
+
+        # By default, hides correct option
+        res = client.get(f"/api/learning/quizzes/{q.id}")
+        assert res.status_code == 200
+        quiz_data = res.get_json()["quiz"]
+        assert quiz_data["id"] == q.id
+        assert quiz_data["subject"] == "Computer Networks"
+        assert "correct_option" not in quiz_data
+
+        # With include_answer=true
+        res_ans = client.get(f"/api/learning/quizzes/{q.id}?include_answer=true")
+        assert res_ans.status_code == 200
+        assert res_ans.get_json()["quiz"]["correct_option"] == 1
+
+        # Non-existent quiz returns 404
+        res_404 = client.get("/api/learning/quizzes/999999")
+        assert res_404.status_code == 404
+
 
 class TestMasteryAndGradingAPI:
     """Tests for quiz submission, mastery score calculation, and spaced repetition."""

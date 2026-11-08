@@ -134,7 +134,7 @@ python -m pytest rl/tests/
 python -m pytest backend/tests/
 ```
 
-**Current status: 48 / 48 passing ✅**
+**Current status: 50 / 50 passing ✅**
 
 ---
 
@@ -214,10 +214,11 @@ The next review is scheduled based on the resulting mastery level:
 **RL**: Gymnasium · NumPy  
 **Frontend**: React 18 · Vite · Axios  
 **Database**: PostgreSQL 16 + pgvector (Docker) / SQLite (tests)  
-**Testing**: pytest · 48 tests  
+**Testing**: pytest · 50 tests  
 
 ---
 
 ## 📄 License
 
 MIT
+

@@ -207,3 +207,39 @@ class TestDocumentManagementAPI:
         assert len(comments) == 1
         assert comments[0]["user_id"] == "student_999"
 
+    def test_get_document_chunks(self, client, db_session):
+        doc = Document(
+            title="Database Systems Syllabus",
+            filename="db_syllabus.pdf",
+            file_type="syllabus",
+            subject="DBMS",
+        )
+        db_session.add(doc)
+        db_session.commit()
+
+        chunk1 = DocumentChunk(
+            document_id=doc.id,
+            chunk_index=0,
+            page_number=1,
+            content="Unit 1: ER Modeling and Relational Algebra",
+        )
+        chunk2 = DocumentChunk(
+            document_id=doc.id,
+            chunk_index=1,
+            page_number=2,
+            content="Unit 2: SQL and Normalization up to BCNF",
+        )
+        db_session.add_all([chunk1, chunk2])
+        db_session.commit()
+
+        res = client.get(f"/api/documents/{doc.id}/chunks")
+        assert res.status_code == 200
+        data = res.get_json()
+        assert data["document_id"] == doc.id
+        assert data["count"] == 2
+        assert len(data["chunks"]) == 2
+        assert data["chunks"][0]["chunk_index"] == 0
+        assert "ER Modeling" in data["chunks"][0]["content"]
+        assert data["chunks"][1]["chunk_index"] == 1
+        assert "Normalization" in data["chunks"][1]["content"]
+
