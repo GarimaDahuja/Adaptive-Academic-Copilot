@@ -30,3 +30,4 @@ class TestConfig(Config):
     """Configuration used during automated tests."""
     TESTING = True
     DEBUG = False
+

@@ -14,3 +14,4 @@ if __name__ == "__main__":
     debug = app.config.get("DEBUG", True)
     print(f"Starting Adaptive Academic Copilot API server on http://localhost:{port}")
     app.run(host="127.0.0.1", port=port, debug=debug)
+

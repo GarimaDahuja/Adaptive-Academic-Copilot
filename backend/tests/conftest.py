@@ -14,3 +14,4 @@ def app():
 def client(app):
     """A test client for sending simulated HTTP requests to the app."""
     return app.test_client()
+

@@ -6,3 +6,9 @@ python-dotenv>=1.0.1
 
 # Testing
 pytest>=8.3.4
+
+# Reinforcement Learning & Numerical Computing
+gymnasium>=1.0.0
+numpy>=2.0.0
+
+

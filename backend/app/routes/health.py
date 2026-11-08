@@ -14,3 +14,4 @@ def health_check():
         "service": "Adaptive Academic Copilot API",
         "version": "0.1.0"
     }), 200
+

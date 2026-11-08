@@ -23,3 +23,4 @@ def test_404_not_found_returns_json(client):
     data = response.get_json()
     assert data is not None
     assert data.get("error") == "Not Found"
+
